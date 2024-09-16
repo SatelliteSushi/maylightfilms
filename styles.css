@@ -11,12 +11,12 @@ body {
 
 #header nav {
     background-color: rgb(27, 27, 27);
-    height: 75px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 50px;
 }
 
 #menu-items ul {
@@ -41,7 +41,7 @@ body {
 
 #ml-logo {
     width: auto;
-    height: 30px;
+    height: 50px;
     margin-right: auto;
     opacity: 80%;
 }
