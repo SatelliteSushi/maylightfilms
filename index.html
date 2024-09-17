@@ -6,20 +6,30 @@
     <title>Home</title>
     <link rel="stylesheet" href="styles.css"/>
     <script>
-        // This function loads the header from "header.html" into the page
         function loadHeader() {
             fetch("header.html")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
+                    setActiveLink(); // Set the active link after the header is loaded
                 });
         }
 
-        // Load the header once the page loads
+        function setActiveLink() {
+            // Get the current URL path
+            const currentPath = window.location.pathname.split('/').pop();
+
+            // Find the link that matches the current path and add the 'active' class
+            document.querySelectorAll('#menu-items a').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
         window.onload = loadHeader;
     </script>
 </head>
-
 <body>
     <div id="header-container"></div>
 </body>

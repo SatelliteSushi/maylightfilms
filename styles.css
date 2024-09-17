@@ -21,7 +21,7 @@ body {
     padding: 0 50px;
 }
 
-#menu-items ul {
+#menu-items {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -30,7 +30,7 @@ body {
 #menu-items li {
     display: inline;
     margin-left: 30px;
-    position: relative; /* Needed for the absolute positioning of the ::after pseudo-element */
+    position: relative;
 }
 
 #menu-items a {
@@ -41,28 +41,36 @@ body {
     font-weight: 300;
     font-size: 22px;
     letter-spacing: 1.5px;
-    position: relative; /* Ensure the ::after pseudo-element is positioned relative to the link */
-    display: inline-block; /* Needed to apply the width to the pseudo-element */
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s, text-shadow 0.3s, border-bottom 0.3s;
 }
 
 #menu-items a::after {
-    content: ''; /* Empty content for the pseudo-element */
+    content: '';
     display: block;
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0; /* Start with zero width */
-    height: 1px; /* Thickness of the underline */
-    background-color: rgb(255, 255, 255); /* Underline color */
-    transition: width 0.3s; /* Animate the width on hover */
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s;
 }
 
 #menu-items a:hover::after {
-    width: 100%; /* Expand the underline to full width on hover */
+    width: 100%;
 }
 
+#menu-items a.active::after {
+    width: 100%;
+}
 
-#ml-logo {
+#menu-items a.active {
+    color: rgb(240, 240, 240);
+}
+
+#ml-logo, #image-link {
     height: 50px;
     width: auto;
     display: block;
