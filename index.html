@@ -5,35 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div id="header-container"></div>
+
     <script>
         function loadHeader() {
             fetch("header.html")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
-                    setActiveLink();
-                });
+                    console.log("Header loaded successfully");
+                })
+                .catch(error => console.error('Error loading header:', error));
         }
-    
-        function setActiveLink() {
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#menu-items a').forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-    
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHeader();
-        });
+
+        document.addEventListener('DOMContentLoaded', loadHeader);
     </script>
-    
-    
-</head>
-<body>
-    <div id="header-container"></div>
 </body>
 </html>
