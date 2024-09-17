@@ -43,7 +43,7 @@ body {
     letter-spacing: 1.5px;
     position: relative;
     display: inline-block;
-    transition: color 0.3s, text-shadow 0.3s, border-bottom 0.3s;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 #menu-items a::after {
@@ -51,24 +51,23 @@ body {
     display: block;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -2px; /* Adjust if needed */
     width: 0;
-    height: 1px;
+    height: 2px; /* Thickness of the underline */
     background-color: rgb(255, 255, 255);
     transition: width 0.3s;
 }
 
-#menu-items a:hover::after {
-    width: 100%;
-}
-
+#menu-items a:hover::after,
 #menu-items a.active::after {
     width: 100%;
 }
 
 #menu-items a.active {
-    color: rgb(240, 240, 240);
+    color: rgb(240, 240, 240); /* Optional: Change color when active */
 }
+
+
 
 #ml-logo, #image-link {
     height: 50px;

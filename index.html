@@ -11,24 +11,27 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
-                    setActiveLink(); // Set the active link after the header is loaded
+                    setActiveLink();
                 });
         }
-
+    
         function setActiveLink() {
-            // Get the current URL path
-            const currentPath = window.location.pathname.split('/').pop();
-
-            // Find the link that matches the current path and add the 'active' class
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('#menu-items a').forEach(link => {
                 if (link.getAttribute('href') === currentPath) {
                     link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         }
-
-        window.onload = loadHeader;
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+        });
     </script>
+    
+    
 </head>
 <body>
     <div id="header-container"></div>
