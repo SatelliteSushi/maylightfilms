@@ -42,6 +42,7 @@ body {
 #ml-logo {
     width: auto;
     height: 50px;
+    display: block;
     margin-right: auto;
     opacity: 80%;
 }
