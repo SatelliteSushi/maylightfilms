@@ -31,7 +31,7 @@ body {
 }
 
 #menu-items a {
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-family: purista;
     font-style: normal;
@@ -40,9 +40,8 @@ body {
 }
 
 #ml-logo {
-    width: auto;
     height: 50px;
+    width: auto;
     display: block;
     margin-right: auto;
-    opacity: 80%;
 }
