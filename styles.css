@@ -12,7 +12,7 @@ body {
 }
 
 #header nav {
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(22, 22, 22);
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -30,17 +30,37 @@ body {
 #menu-items li {
     display: inline;
     margin-left: 30px;
+    position: relative; /* Needed for the absolute positioning of the ::after pseudo-element */
 }
 
 #menu-items a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
     letter-spacing: 1.5px;
+    position: relative; /* Ensure the ::after pseudo-element is positioned relative to the link */
+    display: inline-block; /* Needed to apply the width to the pseudo-element */
 }
+
+#menu-items a::after {
+    content: ''; /* Empty content for the pseudo-element */
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Start with zero width */
+    height: 1px; /* Thickness of the underline */
+    background-color: rgb(255, 255, 255); /* Underline color */
+    transition: width 0.3s; /* Animate the width on hover */
+}
+
+#menu-items a:hover::after {
+    width: 100%; /* Expand the underline to full width on hover */
+}
+
 
 #ml-logo {
     height: 50px;
