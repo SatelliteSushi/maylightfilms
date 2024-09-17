@@ -35,10 +35,11 @@ body {
 #menu-items a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-family: purista;
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 22px;
+    letter-spacing: 1.5px;
 }
 
 #ml-logo {
